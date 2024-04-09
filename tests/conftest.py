@@ -21,7 +21,7 @@ def pytest_runtest_makereport(item):
     setattr(item, "rep_" + rep.when, rep)
     return rep
 
-# TODO neviem preco nevie nájsť kategóriu v config.ini, nedá sa spustiť cez Terminál, ale cez run to ide
+# TODO neviem preco nevie nájsť kategóriu v config.ini, nedá sa spustiť cez Terminál, ale cez run to ide :-(
 @pytest.fixture()
 def setup_and_teardown(request):
     browser = ReadConfigurations.read_configuration("basic info", "browser")
