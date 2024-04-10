@@ -7,6 +7,7 @@ from utilities import ReadConfigurations
 
 @pytest.fixture()
 def log_on_failure(request):
+    # toto patrí k allure reportom
     yield
     item = request.node
     if item.rep_call.failed:
@@ -16,6 +17,7 @@ def log_on_failure(request):
 
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
 def pytest_runtest_makereport(item):
+    # toto patrí k allure reportom
     outcome = yield
     rep = outcome.get_result()
     setattr(item, "rep_" + rep.when, rep)
